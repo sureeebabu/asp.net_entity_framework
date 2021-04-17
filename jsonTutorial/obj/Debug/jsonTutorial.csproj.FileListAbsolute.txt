@@ -1,0 +1,9 @@
+D:\dotNet\jsonTutorial\jsonTutorial\bin\jsonTutorial.dll
+D:\dotNet\jsonTutorial\jsonTutorial\bin\jsonTutorial.pdb
+D:\dotNet\jsonTutorial\jsonTutorial\bin\EntityFramework.dll
+D:\dotNet\jsonTutorial\jsonTutorial\bin\EntityFramework.SqlServer.dll
+D:\dotNet\jsonTutorial\jsonTutorial\bin\EntityFramework.xml
+D:\dotNet\jsonTutorial\jsonTutorial\bin\EntityFramework.SqlServer.xml
+D:\dotNet\jsonTutorial\jsonTutorial\obj\Debug\jsonTutorial.csprojResolveAssemblyReference.cache
+D:\dotNet\jsonTutorial\jsonTutorial\obj\Debug\jsonTutorial.dll
+D:\dotNet\jsonTutorial\jsonTutorial\obj\Debug\jsonTutorial.pdb

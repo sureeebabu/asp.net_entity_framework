@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="jsonTutorialsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="jsonTutorialsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Departments" EntityType="jsonTutorialsModel.Department" />
+    <EntitySet Name="Employees" EntityType="jsonTutorialsModel.Employee" />
+    <AssociationSet Name="FK__Employees__Depar__1273C1CD" Association="jsonTutorialsModel.FK__Employees__Depar__1273C1CD">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Location" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Employees" Relationship="jsonTutorialsModel.FK__Employees__Depar__1273C1CD" FromRole="Departments" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Salary" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="jsonTutorialsModel.FK__Employees__Depar__1273C1CD" FromRole="Employees" ToRole="Departments" />
+  </EntityType>
+  <Association Name="FK__Employees__Depar__1273C1CD">
+    <End Role="Departments" Type="jsonTutorialsModel.Department" Multiplicity="0..1" />
+    <End Role="Employees" Type="jsonTutorialsModel.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
